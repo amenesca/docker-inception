@@ -40,18 +40,18 @@ services:
     build:
       context: .
       dockerfile: requirements/wordpress/Dockerfile
-      args:
-        DB_NAME: ${DB_NAME}
-        DB_USER: ${DB_USER}
-        DB_PASS: ${DB_PASS}
-        ADM_WP_NAME: ${ADM_WP_NAME}
-        ADM_WP_PASS: ${ADM_WP_PASS}
-        ADM_WP_EMAIL: ${ADM_WP_EMAIL}
-        WP_USERNAME: ${WP_USERNAME}
-        WP_USERPASS: ${WP_USERPASS}
-        WP_USEREMAIL: ${WP_USEREMAIL}
-        WP_TITLE: ${WP_TITLE}
-        DB_HOST: ${DB_HOST}
+    environment:
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      ADM_WP_NAME: ${ADM_WP_NAME}
+      ADM_WP_PASS: ${ADM_WP_PASS}
+      ADM_WP_EMAIL: ${ADM_WP_EMAIL}
+      WP_USERNAME: ${WP_USERNAME}
+      WP_USERPASS: ${WP_USERPASS}
+      WP_USEREMAIL: ${WP_USEREMAIL}
+      WP_TITLE: ${WP_TITLE}
+      DB_HOST: ${DB_HOST}
     container_name: wordpress
     depends_on:
       - mariadb
