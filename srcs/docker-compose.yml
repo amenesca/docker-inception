@@ -27,11 +27,6 @@ services:
         DB_USER: ${DB_USER}
         DB_PASS: ${DB_PASS}
         DB_ROOT: ${DB_ROOT}
-        WP_NAME: ${WP_NAME}
-        WP_EMAIL: ${WP_EMAIL}
-        WP_PASS: ${WP_PASS}
-        WP_TITLE: ${WP_TITLE}
-        DB_HOST: ${DB_HOST}
     container_name: mariadb
     ports:
       - "3306:3306"
@@ -49,11 +44,6 @@ services:
         DB_NAME: ${DB_NAME}
         DB_USER: ${DB_USER}
         DB_PASS: ${DB_PASS}
-        WP_NAME: ${WP_NAME}
-        WP_PASS: ${WP_PASS}
-        WP_EMAIL: ${WP_EMAIL}
-        WP_TITLE: ${WP_TITLE}
-        DB_HOST: ${DB_HOST}
     container_name: wordpress
     depends_on:
       - mariadb
