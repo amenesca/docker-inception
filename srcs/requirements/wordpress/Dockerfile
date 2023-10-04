@@ -2,7 +2,16 @@ FROM alpine:3.17
 ARG PHP_VERSION=81 \
     DB_NAME \
     DB_USER \
-    DB_PASS
+    DB_PASS \
+    ADM_WP_NAME \
+    ADM_WP_PASS \
+    ADM_WP_EMAIL \
+    WP_USERNAME \
+    WP_USERPASS \
+    WP_USEREMAIL \
+    WP_TITLE \
+    DB_HOST
+
 RUN apk update && apk upgrade && apk add --no-cache \
     php${PHP_VERSION} \
     php${PHP_VERSION}-fpm \
