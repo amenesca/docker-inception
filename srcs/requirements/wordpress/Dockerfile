@@ -45,6 +45,6 @@ RUN wget https://wordpress.org/latest.zip && \
     rm -rf wordpress latest.zip
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x wp-cli.phar && mv wp-cli.phar /usr/local/bin/wp
-COPY ./requirements/wordpress/conf/wp-config-create.sh .
-RUN chmod +x wp-config-create.sh
+COPY ./conf/wp-config-create.sh .
+RUN chmod +x wp-config-create.sh && chmod -R 0777 wp-content/
 CMD ["/bin/sh", "-c", "/var/www/wp-config-create.sh && /usr/sbin/php-fpm81 -F"]
